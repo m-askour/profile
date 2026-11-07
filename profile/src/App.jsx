@@ -10,7 +10,7 @@ import {
 
 // Put your photo in the /public folder and name it profile.jpg
 // (or change this path). If the file is missing, initials are shown instead.
-const PROFILE_IMAGE = './public/profile.webp';
+const PROFILE_IMAGE = './profile.webp';
 
 const projects = [
   {
