@@ -121,9 +121,9 @@ const socials = [
   { name: 'GitHub', url: 'https://github.com/m-askour', Icon: FaGithub },
   { name: 'LinkedIn', url: 'https://ma.linkedin.com/in/mohamed-askour-911598235', Icon: FaLinkedinIn },
   { name: 'Instagram', url: 'https://www.instagram.com/moha_partridge/', Icon: FaInstagram },
-  { name: 'Facebook', url: 'https://www.facebook.com/Mohamed askour', Icon: FaFacebookF },
-  { name: 'X', url: 'https://x.com/Mohamed askour', Icon: FaXTwitter },
-  { name: 'Reddit', url: 'https://www.reddit.com/user/YOUR_USERNAME', Icon: FaRedditAlien },
+  { name: 'Facebook', url: 'https://www.facebook.com/mohamed.askour.68622/', Icon: FaFacebookF },
+  { name: 'X', url: 'https://x.com/MohamedAskour16', Icon: FaXTwitter },
+  { name: 'Reddit', url: 'https://www.reddit.com/u/Superb-Cow5709/s/Y66xRLv5QC', Icon: FaRedditAlien },
 ];
 
 function SocialLinks({ withLabels = false }) {
