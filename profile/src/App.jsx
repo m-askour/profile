@@ -267,7 +267,7 @@ function App() {
 
               <a
                 className="secondary-btn"
-                href="/Mohamed_askour_cv (en).pdf"
+                href="/Mohamed_askour_cv.pdf"
                 download="Mohamed-Askour-CV.pdf"
               >
                 <FaDownload aria-hidden="true" />
