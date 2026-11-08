@@ -186,11 +186,55 @@ function SocialLinks({ withLabels = false }) {
   );
 }
 
+function SittingRobot() {
+  return (
+    <div className="sit-robot" aria-hidden="true">
+      <div className="sr-upper">
+        <div className="sr-head">
+          <div className="sr-antenna">
+            <span className="sr-antenna-light" />
+          </div>
+          <span className="sr-ear sr-ear-l" />
+          <span className="sr-ear sr-ear-r" />
+
+          <div className="sr-face">
+            <span className="sr-eye" />
+            <span className="sr-eye" />
+            <span className="sr-mouth" />
+          </div>
+        </div>
+
+        <div className="sr-arm sr-arm-l">
+          <span className="sr-hand" />
+        </div>
+        <div className="sr-arm sr-arm-r">
+          <span className="sr-hand" />
+        </div>
+
+        <div className="sr-body">
+          <span className="sr-core" />
+        </div>
+      </div>
+
+      {/* Legs dangle over the top edge of the photo and swing */}
+      <div className="sr-leg sr-leg-l">
+        <span className="sr-foot" />
+      </div>
+      <div className="sr-leg sr-leg-r">
+        <span className="sr-foot" />
+      </div>
+    </div>
+  );
+}
+
 function ProfilePhoto() {
   const [ok, setOk] = useState(true);
 
   return (
-    <div className="photo-frame">
+    <div className="photo-wrap">
+      <SittingRobot />
+
+      <div className="photo-frame">
       <span className="corner tl" />
       <span className="corner tr" />
       <span className="corner bl" />
@@ -213,10 +257,10 @@ function ProfilePhoto() {
       <span className="photo-tag">
         <i className="led" /> online
       </span>
+      </div>
     </div>
   );
 }
-
 function App() {
   return (
     <div className="page-shell">
