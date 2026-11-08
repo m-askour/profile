@@ -6,11 +6,12 @@ import {
   FaGithub,
   FaRedditAlien,
   FaXTwitter,
+  FaDownload,
 } from 'react-icons/fa6';
 
-// Put your photo in the /public folder and name it profile.jpg
-// (or change this path). If the file is missing, initials are shown instead.
-const PROFILE_IMAGE = './profile.webp';
+// Put your photo inside the public folder.
+// Example: public/profile.webp
+const PROFILE_IMAGE = '/profile.webp';
 
 const projects = [
   {
@@ -48,10 +49,20 @@ const projects = [
 ];
 
 const skills = [
-  { category: 'Programming', items: ['C', 'C++', 'Object-Oriented Programming', 'Python'] },
+  {
+    category: 'Programming',
+    items: ['C', 'C++', 'Object-Oriented Programming', 'Python'],
+  },
   {
     category: 'Systems & Tools',
-    items: ['Linux', 'Git', 'TCP/IP', 'Socket Programming', 'Docker', 'Docker Compose'],
+    items: [
+      'Linux',
+      'Git',
+      'TCP/IP',
+      'Socket Programming',
+      'Docker',
+      'Docker Compose',
+    ],
   },
   {
     category: 'Electronics',
@@ -65,7 +76,12 @@ const skills = [
   },
   {
     category: 'Development',
-    items: ['Problem Solving', 'Debugging', 'Teamwork', 'Technical Documentation'],
+    items: [
+      'Problem Solving',
+      'Debugging',
+      'Teamwork',
+      'Technical Documentation',
+    ],
   },
 ];
 
@@ -116,14 +132,37 @@ const specs = [
   ['base', 'Faculty of Sciences'],
 ];
 
-// Replace each YOUR_USERNAME with your real profile name.
 const socials = [
-  { name: 'GitHub', url: 'https://github.com/m-askour', Icon: FaGithub },
-  { name: 'LinkedIn', url: 'https://ma.linkedin.com/in/mohamed-askour-911598235', Icon: FaLinkedinIn },
-  { name: 'Instagram', url: 'https://www.instagram.com/moha_partridge/', Icon: FaInstagram },
-  { name: 'Facebook', url: 'https://www.facebook.com/mohamed.askour.68622/', Icon: FaFacebookF },
-  { name: 'X', url: 'https://x.com/MohamedAskour16', Icon: FaXTwitter },
-  { name: 'Reddit', url: 'https://www.reddit.com/u/Superb-Cow5709/s/Y66xRLv5QC', Icon: FaRedditAlien },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/m-askour',
+    Icon: FaGithub,
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://ma.linkedin.com/in/mohamed-askour-911598235',
+    Icon: FaLinkedinIn,
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/moha_partridge/',
+    Icon: FaInstagram,
+  },
+  {
+    name: 'Facebook',
+    url: 'https://www.facebook.com/mohamed.askour.68622/',
+    Icon: FaFacebookF,
+  },
+  {
+    name: 'X',
+    url: 'https://x.com/MohamedAskour16',
+    Icon: FaXTwitter,
+  },
+  {
+    name: 'Reddit',
+    url: 'https://www.reddit.com/u/Superb-Cow5709/s/Y66xRLv5QC',
+    Icon: FaRedditAlien,
+  },
 ];
 
 function SocialLinks({ withLabels = false }) {
@@ -131,7 +170,13 @@ function SocialLinks({ withLabels = false }) {
     <ul className={withLabels ? 'social-list labeled' : 'social-list'}>
       {socials.map(({ name, url, Icon }) => (
         <li key={name}>
-          <a href={url} target="_blank" rel="noreferrer" aria-label={name} title={name}>
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={name}
+            title={name}
+          >
             <Icon aria-hidden="true" />
             {withLabels && <span>{name}</span>}
           </a>
@@ -164,6 +209,7 @@ function ProfilePhoto() {
       )}
 
       <span className="scanline" aria-hidden="true" />
+
       <span className="photo-tag">
         <i className="led" /> online
       </span>
@@ -194,25 +240,38 @@ function App() {
         {/* HERO */}
         <section id="home" className="hero">
           <div className="hero-text">
-            <p className="eyebrow">software development · systems · electronics</p>
+            <p className="eyebrow">
+              software development · systems · electronics
+            </p>
 
             <h1>
               Engineering ideas through code and electronics.
             </h1>
 
             <p className="lead">
-              I am a software development student at 42 with an interest in systems
-              programming, software engineering, embedded systems, and electronics. I
-              enjoy understanding how things work, solving technical problems, and
-              building practical solutions.
+              I am a software development student at 42 with an interest in
+              systems programming, software engineering, embedded systems, and
+              electronics. I enjoy understanding how things work, solving
+              technical problems, and building practical solutions.
             </p>
 
+            {/* CALL TO ACTION BUTTONS */}
             <div className="cta-row">
               <a className="primary-btn" href="#projects">
                 Explore my work
               </a>
+
               <a className="secondary-btn" href="#contact">
                 Get in touch
+              </a>
+
+              <a
+                className="secondary-btn"
+                href="/Mohamed_askour_cv (en).pdf"
+                download="Mohamed-Askour-CV.pdf"
+              >
+                <FaDownload aria-hidden="true" />
+                <span>Download CV</span>
               </a>
             </div>
 
@@ -221,10 +280,12 @@ function App() {
                 <strong>C / C++</strong>
                 <span>Programming</span>
               </div>
+
               <div>
                 <strong>42 · 1337</strong>
                 <span>Software education</span>
               </div>
+
               <div>
                 <strong>Faculty of Sciences</strong>
                 <span>Electronics & systems</span>
@@ -259,18 +320,23 @@ function App() {
                 <span className="token purple">#include</span>
                 <span className="token blue"> &lt;iostream&gt;</span>
               </div>
+
               <div className="line">
                 <span className="token purple">int</span> main(){' {'}
               </div>
+
               <div className="line indent">
                 <span className="token purple">const char*</span> focus =
               </div>
+
               <div className="line indent">
                 <span className="token blue">"Build. Learn. Improve."</span>;
               </div>
+
               <div className="line indent">
                 <span className="token purple">return</span> 0;
               </div>
+
               <div className="line">{'}'}</div>
             </div>
           </aside>
@@ -285,16 +351,19 @@ function App() {
 
           <div className="about-grid">
             <p>
-              I am a software development student at 42, focused on strengthening my
-              skills in C, C++, Linux, and systems programming. Through practical
-              projects, I explore low-level concepts, networking, memory management,
-              and software architecture.
+              I am a software development student at 42, focused on
+              strengthening my skills in C, C++, Linux, and systems
+              programming. Through practical projects, I explore low-level
+              concepts, networking, memory management, and software
+              architecture.
             </p>
+
             <p>
-              My academic background in applied physics and my interest in electronics
-              and automation have shaped my curiosity about how software interacts with
-              hardware. I enjoy experimenting, learning new technologies, and turning
-              technical ideas into working solutions.
+              My academic background in applied physics and my interest in
+              electronics and automation have shaped my curiosity about how
+              software interacts with hardware. I enjoy experimenting,
+              learning new technologies, and turning technical ideas into
+              working solutions.
             </p>
           </div>
         </section>
@@ -310,10 +379,13 @@ function App() {
             {experience.map((item) => (
               <article className="experience-card" key={item.title}>
                 <span className="node" aria-hidden="true" />
+
                 <div className="experience-content">
                   <h3>{item.title}</h3>
                   <p className="experience-role">{item.role}</p>
-                  <p className="experience-organization">{item.organization}</p>
+                  <p className="experience-organization">
+                    {item.organization}
+                  </p>
                   <p>{item.description}</p>
                 </div>
               </article>
@@ -344,6 +416,7 @@ function App() {
           <div className="section-heading">
             <p className="eyebrow">// projects</p>
             <h2>Things I build and explore.</h2>
+
             <p className="section-description">
               A selection of my programming, systems, and electronics work.
             </p>
@@ -354,12 +427,15 @@ function App() {
               <article className="project-card" key={project.title}>
                 <div className="project-top">
                   <span className="badge">{project.category}</span>
+
                   <span className="project-status">
                     <i className="led" /> {project.status}
                   </span>
                 </div>
+
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
+
                 <div className="tag-list">
                   {project.tags.map((tag) => (
                     <span key={tag}>{tag}</span>
@@ -381,6 +457,7 @@ function App() {
             {skills.map((group) => (
               <article className="skill-group" key={group.category}>
                 <h3>{group.category}</h3>
+
                 <div className="skill-list">
                   {group.items.map((skill) => (
                     <span key={skill} className="skill-pill">
@@ -404,22 +481,24 @@ function App() {
             <div className="interest-card">
               <h3>Systems Programming</h3>
               <p>
-                Understanding operating systems, memory, processes, networking, and
-                low-level programming.
+                Understanding operating systems, memory, processes, networking,
+                and low-level programming.
               </p>
             </div>
+
             <div className="interest-card">
               <h3>Embedded Systems</h3>
               <p>
-                Exploring the relationship between software, microcontrollers, sensors,
-                and electronic devices.
+                Exploring the relationship between software, microcontrollers,
+                sensors, and electronic devices.
               </p>
             </div>
+
             <div className="interest-card">
               <h3>Automation & Electronics</h3>
               <p>
-                Learning how electronic systems and automation principles can solve
-                practical problems.
+                Learning how electronic systems and automation principles can
+                solve practical problems.
               </p>
             </div>
           </div>
@@ -430,14 +509,18 @@ function App() {
       <footer id="contact" className="footer">
         <div className="footer-content">
           <p className="eyebrow">// contact</p>
+
           <h2>Let's connect and build something meaningful.</h2>
+
           <p>
-            Interested in software development, systems programming, electronics, or
-            collaboration? Feel free to get in touch.
+            Interested in software development, systems programming,
+            electronics, or collaboration? Feel free to get in touch.
           </p>
 
           <div className="contact-links">
-            <a href="mailto:mohaskour.sa@gmail.com">mohaskour.sa@gmail.com</a>
+            <a href="mailto:mohaskour.sa@gmail.com">
+              mohaskour.sa@gmail.com
+            </a>
           </div>
 
           <SocialLinks withLabels />
